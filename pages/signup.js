@@ -36,7 +36,7 @@ export default function Home() {
   } = useFormik({
     onSubmit: async (value, form) => {
       try {
-        const user = await firebase.auth().signInWithEmailAndPassword(
+        const user = await firebase.auth().createUserWithEmailAndPassword(
           values.email, values.password
         )
         console.log(user)
@@ -72,11 +72,18 @@ export default function Home() {
         {touched.password && <FormHelperText textColor="#e74c3c">{errors.password}</FormHelperText>}
       </FormControl>
 
+      <FormControl id="username" p={4} isRequired>
+        <InputGroup size="lg">
+          <InputLeftAddon children="agendar.work/" />
+          <Input size="lg" placeholder="Usuário" type="username" value={values.username} onChange={handleChange} onBlur={handleBlur} />
+        </InputGroup>
+        {touched.username && <FormHelperText textColor="#e74c3c">{errors.username}</FormHelperText>}
+      </FormControl>
       <Box p={4}>
         <Button colorScheme="blue" width="100%" onClick={handleSubmit} isLoading={isSubmitting}>Entrar</Button>
       </Box>
     </Box>
 
-    Ainda não tem uma conta? <Link color="teal.500" href="/signup">Cadastre-se!</Link>
+    Já tem uma conta? <Link color="teal.500" href="/">Faça login!</Link>
   </Container>
 }
