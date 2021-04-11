@@ -1,0 +1,34 @@
+{
+  "name": "agendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mickaelmota/agendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickaelmota/agendar/issues"
+  },
+  "homepage": "https://github.com/mickaelmota/agendar#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^1.5.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "@svgr/webpack": "^5.5.0",
+    "firebase": "^8.3.3",
+    "firebase-admin": "^9.6.0",
+    "formik": "^2.2.6",
+    "framer-motion": "^4.1.3",
+    "next": "^10.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "yup": "^0.32.9"
+  }
+}
