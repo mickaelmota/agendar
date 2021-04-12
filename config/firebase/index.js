@@ -2,15 +2,19 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBGwhKt-UwlfRIY-JzbLkKtrnWcXPPYcGg",
-    authDomain: "agendar-work.firebaseapp.com",
-    projectId: "agendar-work",
-    storageBucket: "agendar-work.appspot.com",
-    messagingSenderId: "718012136395",
-    appId: "1:718012136395:web:19e8fbe1bd2075e5c5944e",
-    measurementId: "G-1RCBB11JMB"
-  };
-  
- export default firebase.apps.length 
-    ? firebase.app() 
-    : firebase.initializeApp(firebaseConfig);
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
+};
+
+const app = firebase.apps.length
+? firebase.app()
+: firebase.initializeApp(firebaseConfig);
+
+export const persistenceMode = firebase.auth.Auth.Persistence.LOCAL
+
+export default app

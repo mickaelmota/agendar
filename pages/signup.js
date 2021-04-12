@@ -84,6 +84,6 @@ export default function Home() {
       </Box>
     </Box>
 
-    Já tem uma conta? <Link color="teal.500" href="/">Faça login!</Link>
+    Já tem uma conta? <Link href="/">Faça login!</Link>
   </Container>
 }
